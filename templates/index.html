@@ -1,6 +1,14 @@
 {% extends "base.html"  %}
 
 {% block content %}
-  <h1>movies</h1>
-  <p>Welcome to my movies.</p>
+    <h1>movies</h1>
+    <p>Welcome to my movies.</p>
+    <form action="/" method="POST">
+        {{ movie_form.hidden_tag() }}
+        <p>{{ movie_form.name.label }}
+            {{ movie_form.name() }}</p>
+        <p>{{ movie_form.rating.label }}
+            {{ movie_form.rating() }}</p>
+        <p>{{ movie_form.submit() }}</p>
+    </form>
 {% endblock %}
